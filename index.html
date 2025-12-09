@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daria Antipova - Психотерапевт</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #647058;
+            --bg: #F7F6F2;
+            --bg-white: #FFFFFF;
+            --text: #333130;
+            --spacing: 4rem;
+            --radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.75rem; }
+        h3 { font-size: 2rem; color: var(--primary); margin-bottom: 0.2rem; }
+
+        p { margin-bottom: 1rem; }
+        ul { list-style: none; padding-left: 0; }
+        li { margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem; }
+        li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+            min-height: 300px;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing) 1.5rem;
+        }
+        .bg-white { background-color: var(--bg-white); }
+        .text-center { text-align: center; }
+        .bold { font-weight: 600; }
+        
+        /* Grid System */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--bg-white);
+            padding: 0.8rem 2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { opacity: 0.8; }
+
+        /* Desktop Layout */
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+            h1 { font-size: 3.5rem; }
+            .section-stats { display: flex; justify-content: space-around; text-align: center; }
+        }
+
+        /* Mobile Layout & Specific Order adjustments */
+        @media (max-width: 767px) {
+            .grid { grid-template-columns: 1fr; }
+            .order-mobile-top { order: -1; }
+            .order-mobile-bottom { order: 1; }
+            .section-stats { text-align: center; }
+        }
+
+        /* Section Specifics */
+        .card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary);
+            transition: opacity 0.3s;
+        }
+        .icon:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <section class="container text-center">
+        <h1>Daria Antipova</h1>
+        <h2>Психотерапевт</h2>
+        <p>Консультант в сфере сексуальных отношений</p>
+        <p>Семейный психолог</p>
+        <a href="https://wa.me/+79627901129" class="btn">Связаться</a>
+    </section>
+
+    <div class="bg-white">
+        <section class="container grid grid-2">
+            <img src="https://placehold.co/600x600/e0e0e0/333130?text=Image" alt="Daria Antipova" class="order-mobile-top">
+            <div>
+                <h2>Терапия со мной</h2>
+                <p class="bold">Эффективно</p>
+                <p class="bold">Этично</p>
+                <p class="bold">Конфиденциально</p>
+                <p>Я сопровождаю людей на их пути самопознания, помогаю улучшить отношения с собой и с окружающими, повысить качество жизни.</p>
+            </div>
+        </section>
+    </div>
+
+    <section class="container section-stats">
+        <div>
+            <h3>9+</h3>
+            <p>лет опыта работы</p>
+        </div>
+        <div>
+            <h3>8600+</h3>
+            <p>часов психологической практики</p>
+        </div>
+        <div>
+            <h3>2100+</h3>
+            <p>часов повышения квалификации</p>
+        </div>
+    </section>
+
+    <div class="bg-white">
+        <section class="container grid grid-2">
+            <img src="https://placehold.co/600x600/e0e0e0/333130?text=Consultation" alt="Consultations" class="order-mobile-top">
+            <div>
+                <h2>Консультации</h2>
+                <ul>
+                    <li>Лично в Барнауле</li>
+                    <li>Онлайн по всему миру</li>
+                    <li>Персональный подход</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <section class="container">
+        <div class="grid grid-2">
+            <div class="card">
+                <h2>Индивидуальная консультация</h2>
+                <p class="bold">4000 руб</p>
+                <p class="bold">55 минут</p>
+                <p>Проработка сложных эмоций, иррациональных мыслей, негативных установок. Решение ваших внутренних проблем.</p>
+            </div>
+            <div class="card">
+                <h2>Консультирование пар</h2>
+                <p class="bold">5000 руб</p>
+                <p class="bold">1.5 часа</p>
+                <p>Сложности в общении, конфликты и скандалы, ощущение, что вы друг друга не понимаете, сексуальные проблемы, ситуация измены.</p>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 2rem;">
+            <a href="https://wa.me/+79627901129" class="btn">Связаться</a>
+        </div>
+    </section>
+
+    <div class="bg-white">
+        <section class="container grid grid-2">
+            <img src="https://placehold.co/600x600/e0e0e0/333130?text=Problems" alt="Problems" class="order-mobile-top">
+            <div>
+                <h2>Какие проблемы я помогу решить</h2>
+                <ul>
+                    <li>Переживание трудных эмоций - тревога, сниженное настроение, апатия, злость, грусть, вина, обида.</li>
+                    <li>Сексуальные сложности и неудовлетворённость сексуальной жизнью.</li>
+                    <li>Трудности в снижении веса, заедание эмоций, нарушение отношений с едой.</li>
+                    <li>Низкая самооценка, неуверенность в себе, зависимость от чужого мнения, «не люблю себя», «не знаю, чего хочу», "боюсь быть неудобной".</li>
+                    <li>Сложности в отношениях с собой и с другими. Конфликты и непонимание в паре.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <section class="container grid grid-2">
+        <div>
+            <h2>Образование</h2>
+            <ul>
+                <li>Алтайский Государственный Медицинский Университет, специальность "Лечебное дело".</li>
+                <li>Интернатура по специальности "Психиатрия".</li>
+                <li>Профессиональная подготовка по специальности "Психотерапия".</li>
+                <li>Программа подготовки транзактных аналитиков в России в СОТА (Санкт-Петербургская Организация Транзактного Анализа).</li>
+                <li>Профессиональная переподготовка по специальности "Консультант сексуальных отнощений".</li>
+                <li>Ежегодно повышаю квалификацию на различных курсах, тренингах, семинарах.</li>
+            </ul>
+        </div>
+        <img src="https://placehold.co/600x600/e0e0e0/333130?text=Education" alt="Education" class="order-mobile-bottom">
+    </section>
+
+    <section class="container grid grid-2">
+        <img src="https://placehold.co/600x600/e0e0e0/333130?text=Therapy" alt="Philosophy" class="order-mobile-bottom">
+        <div>
+            <h2>Терапия</h2>
+            <p>На консультации вы найдете поддержку и понимание. Вас услышат.</p>
+            <p>Со мной можно поговорить о том, что для вас важно и что беспокоит. О том, что больно, страшно, грустно, непонятно, тяжело... Поговорить спокойно, без критики и осуждения.</p>
+            <p>Для меня важное значение имеет отношение человека к самому себе. Я помогаю клиентам стать другом самому себе, относиться к себе с уважением и любовью. Для меня это важная составляющая психического здоровья. И на все другие проблемы смотрю через призму этого.</p>
+            <p>Я создаю пространство, где в безопасной и поддерживающей обстановке вы можете быть честными с самими собою, где вы будете меняться максимально эффективно. Это непростой, но очень увлекательный путь.</p>
+            <a href="https://wa.me/+79627901129" class="btn">Забронировать сессию</a>
+        </div>
+    </section>
+
+    <footer class="container text-center" style="padding-top: 0;">
+        <div class="footer-icons">
+            <a href="https://www.instagram.com/mindful.psy/" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://vk.com/dr_antipova" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M15.684 0h-7.368c-4.142 0-7.5 3.358-7.5 7.5v7.5c0 4.142 3.358 7.5 7.5 7.5h7.368c4.142 0 7.5-3.358 7.5-7.5v-7.5c0-4.142-3.358-7.5-7.5-7.5zm5.093 14.65c-.216.945-2.074 4.418-4.379 4.418-1.217 0-2.486-.677-4.137-2.636-2.062-2.274-1.782-1.956.702-5.452 1.512-2.129 2.115-3.431 1.927-3.988-.178-.529-1.325-.389-1.325-.389s-.1 0-.279.014c-.33.04-.645.105-.724.111-.842.067-1.488.083-2.147.056-1.026-.042-1.996-.827-3.663-3.666-2.583-4.398-5.322-7.85-6.732-7.85 0 0-.256-.028-.358.125-.084.125.155.626.155.626s2.515 5.867 5.378 10.99c2.563 4.588 5.485 4.31 5.485 4.31s.344-.027.507-.222c.135-.162.13-.464.13-.464s-.066-2.884-1.579-3.327c-1.228-.36-2.569 1.112-3.033 1.43-.377.258-.698.175-.698.175l-1.411-5.18s-.11-.468.328-.688c.287-.144 1.18-.328 3.193-.328 1.096 0 1.45.05 1.887.108.826.11 2.766.257 3.012 1.942.155 1.062.039 2.508-.184 3.513-.075.337-.394.815.176.815.285 0 .979-.991 2.261-2.909 1.173-1.754 1.962-3.67 1.962-3.67s.114-.282.686-.282h2.09c.642 0 .864.316.7.797-.04.116-.628 1.442-2.871 4.329z"/></svg>
+            </a>
+            <a href="https://wa.me/+79627901129" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.009.575 2.173.894 3.475.895h.002c3.181 0 5.768-2.586 5.768-5.766.001-3.18-2.587-5.767-5.768-5.767zm6.524 9.807c-.728.372-1.076.569-1.426.474-.405-.109-1.309-.481-2.484-1.529-1.368-1.22-2.132-2.715-2.276-3.12-.229-.646.28-1.011.57-1.319.233-.247.472-.519.539-.773.064-.251-.108-1.056-.465-1.921-.301-.73-.564-.672-.777-.674-.213-.002-.456-.003-.7-.003-.687 0-1.602.488-1.602 1.698 0 1.229.839 2.72 1.159 3.16.596.819 2.67 4.169 5.896 5.166.726.223 1.543.155 2.228-.103.543-.205 1.341-.838 1.562-1.482.22-.644.209-1.261.161-1.482-.125-.572-.888-.934-1.613-1.272zM12 2.008C6.486 2.008 2 6.494 2 12.008c0 1.846.505 3.567 1.378 5.044L2.008 22l5.093-1.336c1.426.804 3.068 1.265 4.811 1.268h.005c5.514 0 10-4.486 10-10s-4.486-10-10-10z"/></svg>
+            </a>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.7;">© 2025. Daria Antipova. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
