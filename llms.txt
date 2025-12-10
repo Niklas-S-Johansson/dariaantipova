@@ -1,0 +1,10 @@
+# Daria Antipova - Psychotherapist
+# https://www.dariaantipova.ru
+
+User-agent: *
+Allow: /
+
+# Summary for AI Context
+Title: Daria Antipova - Psychotherapist & Sexologist
+Description: Personal website for Daria Antipova, a psychotherapist based in Barnaul offering individual therapy, couples counseling, and sex therapy.
+Languages: Russian
