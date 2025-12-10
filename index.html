@@ -93,7 +93,15 @@
         .grid {
             display: grid;
             gap: 0;
-            align-items: stretch;
+            align-items: center; /* This centers items vertically */
+        }
+        
+        /* 2. This handles ONLY the images inside the grid */
+        .grid > img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius); /* This makes them round */
         }
         .grid-2 { grid-template-columns: 1fr 1fr; }
         
@@ -102,14 +110,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-
-        .grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            max-height: 400px;
         }
 
         .pricing-grid {
@@ -185,7 +185,6 @@
         .bg-white img:not(.slide img) {
             width: 100%;
             max-height: 400px;
-            justify-content: center;
             object-fit: cover;
         }
 
