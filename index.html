@@ -30,12 +30,13 @@
 
         h1, h2 {
             font-family: 'Fraunces', serif;
+            font-weight: 600;
             margin-bottom: 1rem;
             line-height: 1.2;
         }
 
-        h1 { font-size: 4.5rem; }
-        h2 { font-size: 2.25rem; color: var(--text); }
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.25rem; color: var(--text); } /* Increased size */
         
         p { margin-bottom: 1rem; }
 
@@ -88,6 +89,7 @@
         }
         .btn:hover { opacity: 0.8; }
 
+        /* Grid System */
         .grid {
             display: grid;
             gap: 0;
@@ -107,13 +109,70 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            min-height: 400px;
+            max-height: 400px;
         }
 
         .pricing-grid {
             gap: 2rem;
             align-items: start;
         }
+        
+        /* Slider Styles */
+        .slider-wrapper {
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .slider-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .slide img {
+            max-height: 300px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+        
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--bg-white);
+            border: none;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .prev { left: 1rem; }
+        .next { right: 1rem; }
+        .nav-btn:hover { opacity: 1; }
 
         @media (max-width: 767px) {
             .grid { grid-template-columns: 1fr; }
@@ -121,6 +180,17 @@
             .order-mobile-bottom { order: 1; }
             .text-block { padding: 2rem 1.5rem; }
             h1 { font-size: 2.5rem; }
+        }
+        
+        .bg-white img:not(.slide img) {
+            width: 100%;
+            max-height: 400px;
+            justify-content: center;
+            object-fit: cover;
+        }
+
+        .slider-wrapper {
+        min-height: 320px;
         }
 
         .footer-icons {
@@ -210,7 +280,7 @@
             </div>
         </section>
 
-        <section class="bg-white grid grid-2">
+        <section class="grid grid-2">
             <div class="text-block">
                 <h2>Образование</h2>
                 <ul>
@@ -222,7 +292,20 @@
                     <li>Ежегодно повышаю квалификацию на различных курсах, тренингах, семинарах.</li>
                     </ul>
             </div>
-            <img src="https://placehold.co/600x600/e0e0e0/333130?text=Education" alt="Education" class="order-mobile-bottom">
+            <div class="slider-wrapper order-mobile-bottom">
+                <div class="slider-track" id="track">
+                    <div class="slide"><img src="https://placehold.co/400x300/e0e0e0/333130?text=Cert+1" alt="Certificate 1"></div>
+                    <div class="slide"><img src="https://placehold.co/300x400/e0e0e0/333130?text=Cert+2" alt="Certificate 2"></div>
+                    <div class="slide"><img src="https://placehold.co/400x300/e0e0e0/333130?text=Cert+3" alt="Certificate 3"></div>
+                    <div class="slide"><img src="https://placehold.co/400x400/e0e0e0/333130?text=Cert+4" alt="Certificate 4"></div>
+                </div>
+                <button class="nav-btn prev" onclick="moveSlide(-1)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="nav-btn next" onclick="moveSlide(1)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
         </section>
     
         <section class="bg-white grid grid-2">
@@ -253,5 +336,21 @@
             <p style="font-size: 0.9rem; opacity: 0.7;">© 2025. Daria Antipova. All rights reserved.</p>
         </footer>
     </main>
+    <script>
+        let currentIndex = 0;
+        const track = document.getElementById('track');
+        const totalSlides = 4;
+    
+        function moveSlide(direction) {
+            currentIndex += direction;
+            
+            // Loop functionality
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            
+            const offset = currentIndex * -100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
 </body>
 </html>
